@@ -34,7 +34,7 @@ create policy "Users can see only their own items."
 create policy "Categories ae viewable by everyone"
   on categories for select
   to authenticated
-  using (true)
+  using (true);
 
 create or replace function match_category(
   query_embedding vector(384),
@@ -45,7 +45,7 @@ returns table (
   id bigint,
   category text,
   similarity float
-)
+);
 language sql stable
 as $$
   select
